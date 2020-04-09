@@ -1,0 +1,214 @@
+html,
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+:root {
+    --map-columns-count: 10;
+}
+
+.title {
+    margin: .5em;
+    font-size: 55px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.main-wrapper {
+    margin: 20px auto;
+    width: 830px;
+}
+
+.level-select-form {
+    margin: 30px 0;
+}
+
+.label {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.label-text {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.level-select {
+    width: 50px;
+}
+
+.start-button {
+    background: none;
+    border: 2px solid orange;
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.game-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.map-wrapper {
+    position: relative;
+    flex: 0 0 600px;
+}
+
+.map {
+    display: grid;
+    grid-template-columns: repeat(var(--map-columns-count), 1fr);
+    grid-auto-rows: 1fr;
+    width: 100%;
+    background-color: white;
+    background-image: url("img/Compass.png"),
+    linear-gradient(#eee 1px, transparent 1px),
+    linear-gradient(90deg, #eee 1px, transparent 1px);
+    background-size: 75px 75px, 20px 20px, 20px 20px;
+    background-position: left bottom, -1px -1px, -1px -1px;
+    background-repeat: no-repeat, repeat, repeat;
+}
+
+.map:before {
+    content: '';
+    width: 0;
+    padding-bottom: 100%;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+}
+
+.map > *:first-child {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+}
+
+.cell {
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.sea {
+    background-image: url("img/Sea.png");
+}
+
+.earth {
+    background-image: url("img/Earth.png");
+}
+
+.port {
+    background-image: url("img/Port.png");
+}
+
+.home {
+    background-image: url("img/HomePort.png");
+}
+
+.empty {
+    background: white;
+}
+
+#ship {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("img/Ship.png");
+    background-position: 50% 50%;
+    background-size: contain;
+    transition: all ease-out 0.1s;
+}
+
+.pirates {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("img/Pirates.png");
+    background-position: 50% 50%;
+    background-size: contain;
+    transition: all ease-out 0.1s;
+}
+
+.text-over-map-wrapper {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-over-map {
+    margin: 0;
+    font-size: 45px;
+    color: white;
+    text-shadow: 3px 3px 3px #333;
+    text-align: center;
+}
+
+.small-text-over-map {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px 0 #333;
+    text-align: center;
+}
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .3);
+}
+
+.sidebar {
+    flex: 0 0 200px;
+    margin-left: 30px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.sidebar-title {
+    margin: 1em 0 5px;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.score,
+.step {
+    margin: 0;
+}
+
+.empty-goods {
+    margin: 0;
+    font-style: italic;
+}
+
+.goods {
+    margin: 0;
+    padding-left: 1em;
+    font-weight: normal;
+}
+
+.hide {
+    display: none;
+}
+
+.history-wrapper {
+    margin-top: 5px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.history-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.history-list li {
+    margin-bottom: 5px;
+}

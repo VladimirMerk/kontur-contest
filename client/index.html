@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Морская торговля</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1 class="title">Морская торговля</h1>
+</header>
+<main class="main-wrapper">
+    <form class="level-select-form">
+        <label class="label">
+            <span class="label-text">Выбери уровень:</span>
+            <select name="level" class="level-select" autocomplete="off">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </label>
+        <button class="start-button">Начать</button>
+    </form>
+    <div class="game-wrapper">
+        <div class="map-wrapper">
+            <div class="map"></div>
+        </div>
+        <div class="sidebar hidden">
+            <p class="step"></p>
+            <p class="score"></p>
+            <h5 class="sidebar-title">Товары на корабле:</h5>
+            <p class="empty-goods">Пусто</p>
+            <ol class="goods hide"></ol>
+            <h5 class="sidebar-title">История:</h5>
+            <div class="history-wrapper">
+                <ul class="history-list"></ul>
+            </div>
+        </div>
+    </div>
+</main>
+<script type="module" src="index.mjs"></script>
+</body>
+</html>
